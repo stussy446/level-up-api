@@ -1,5 +1,5 @@
 class Achievement < ApplicationRecord
-  validates :name, :description, :user_id, :points, presence: true
+  validates :name, :description, :points, presence: true
 
-  belongs_to :user
+ 
 end
