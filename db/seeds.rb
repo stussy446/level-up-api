@@ -17,13 +17,12 @@ end
   Achievement.create(name: Faker::Name.title, description: "DESCRIPTION PLACEHOLDER", points: rand(0..30))
 end
 
-UserAchievement.create(user_id: 1, achievement_id: 1, completed: true)
-UserAchievement.create(user_id: 1, achievement_id: 2, completed: false)
+3.times do
+UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: true)
 
-UserAchievement.create(user_id: 2, achievement_id: 1, completed: false)
-UserAchievement.create(user_id: 2, achievement_id: 2, completed: false)
-UserAchievement.create(user_id: 2, achievement_id: 3, completed: false)
-UserAchievement.create(user_id: 2, achievement_id: 4, completed: false)
+UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: false)
+end
+
 
 
 
