@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729225225) do
+ActiveRecord::Schema.define(version: 20170729232745) do
 
   create_table "achievements", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
+    t.integer "points", null: false
     t.boolean "chosen", default: false
     t.boolean "completed", default: false
     t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "avatars", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170729225225) do
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
+    t.integer "xp", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

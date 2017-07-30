@@ -14,5 +14,5 @@
 end
 
 10.times do
-  User.all.sample.achievements.create(name: Faker::Name.title, description: "DESCRIPTION PLACEHOLDER")
+  User.all.sample.achievements.create(name: Faker::Name.title, description: "DESCRIPTION PLACEHOLDER", points: rand(0..30))
 end
