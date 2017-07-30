@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20170730000941) do
   end
 
   create_table "avatars", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.string "img", null: false
+    t.integer "xp", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,12 +46,8 @@ ActiveRecord::Schema.define(version: 20170730000941) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
     t.string "username", null: false
-    t.string "email", null: false
     t.string "password_digest", null: false
-    t.integer "xp", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
