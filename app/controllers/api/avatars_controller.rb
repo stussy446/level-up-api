@@ -53,7 +53,7 @@ class Api::AvatarsController < Api::ApiController
     
     #loop through avatars completed achievements and grab the points
     @avatar.user.completed_achievements.map do |ach|
-      @points_array << @a_points = ach.achievement.points
+      @points_array << ach.achievement.points
     end
 
     #sum the points for the avatar
