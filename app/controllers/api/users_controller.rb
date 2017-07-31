@@ -5,14 +5,12 @@ class Api::UsersController < Api::ApiController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
-    @user_achievements = @user.picked_achievements 
-    @completed_achievements = @user.completed_achievements
+    @user = User.find(6)
+    # @user_achievements = @user.picked_achievements
+    # @completed_achievements = @user.completed_achievements
     render status: 200, json: {
-      user: @user, 
-      achievements: @user.achievements,
-      users_achievements: @user_achievements,
-      completed_achievements: @completed_achievements
+      user: @user,
+      user_achievements: @user.achievements
     }.to_json
   end
 
@@ -35,7 +33,7 @@ class Api::UsersController < Api::ApiController
     end
   end
 
-  private 
+  private
 
   def user_params
     params.permit(:username, :password)

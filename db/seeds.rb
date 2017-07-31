@@ -21,7 +21,7 @@ end
   Achievement.create(name: Faker::Name.title, description: "DESCRIPTION PLACEHOLDER", points: rand(0..30))
 end
 
-5.times do
+10.times do
 UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: true)
 
 UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: false)
