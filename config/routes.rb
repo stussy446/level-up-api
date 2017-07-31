@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     
   end
   resources :users
+  root "api/avatars#show"
 end
