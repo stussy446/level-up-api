@@ -8,9 +8,8 @@ class Api::AvatarsController < Api::ApiController
   end
 
   def show
-    @user = User.find(2)
-    @avatar_id = @user.avatar.id
-    @avatar = Avatar.find(2)
+    @user = User.find(1)
+    @avatar = Avatar.find(1)
     @completed_achievements = @avatar.user.completed_achievements.map do |ach|
       ach.achievement
     end
@@ -33,7 +32,7 @@ class Api::AvatarsController < Api::ApiController
       render status: 422, json: {
         message: "Avatar creation failed",
         avatar: @avatar.errors
-      }
+      }.to_json
     end
   end
 
@@ -55,11 +54,11 @@ class Api::AvatarsController < Api::ApiController
 
     #giving the avatar a image depending on the avatar xp
     if @avatar.xp >= 10
-      @avatar.img = './lvl2.jpg'
+      @avatar.img = '/images/lvl2.jpg'
     elsif @avatar.xp >= 50
-      @avatar.img = './lvl3.jpg'
+      @avatar.img = '/images/lvl3.jpg'
     else
-      @avatar.img = './lvl1.jpg'
+      @avatar.img = '/images/lvl1.jpg'
     end
 
     if @avatar.update(avatar_params)
