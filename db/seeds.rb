@@ -13,22 +13,26 @@ Achievement.destroy_all
 UserAchievement.destroy_all
 Avatar.destroy_all
 
-5.times do
-  User.create(username: Faker::Internet.user_name, password: "password")
+1.times do
+  User.create(username: "Username1", password: "password")
 end
 
-10.times do
-  Achievement.create(name: Faker::Name.title, description: "DESCRIPTION PLACEHOLDER", points: rand(0..30))
+30.times do
+  Achievement.create(name: Faker::Name.title, description: Faker::Lorem.paragraph, points: rand(10..30))
 end
 
-10.times do
-UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: true)
+first_user = User.first
 
-UserAchievement.create(user: User.all.sample, achievement: Achievement.all.sample, completed: false)
+4.times do
+  UserAchievement.create(user: first_user, achievement: Achievement.all.sample, completed: true)
+
+  UserAchievement.create(user: first_user, achievement: Achievement.all.sample, completed: false)
 end
 
-5.times do
-  Avatar.create(user: User.all.sample, name: Faker::Name.first_name, img: "PLACEHOLDER FOR IMAGE STRING")
+
+
+1.times do
+  Avatar.create(user: first_user, name: Faker::Name.first_name, img: "PLACEHOLDER FOR IMAGE STRING")
 end
 
 
