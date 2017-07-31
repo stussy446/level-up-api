@@ -5,7 +5,7 @@ class Api::UsersController < Api::ApiController
   end
 
   def show
-    @user = User.find(6)
+    @user = User.find(1)
     # @user_achievements = @user.picked_achievements
     # @completed_achievements = @user.completed_achievements
     render status: 200, json: {
