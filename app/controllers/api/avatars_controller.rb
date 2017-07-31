@@ -8,18 +8,11 @@ class Api::AvatarsController < Api::ApiController
   end
 
   def show
-    @avatar = Avatar.find(params[:id])
+    @user = User.find(2)
+    @avatar_id = @user.avatar.id
+    @avatar = Avatar.find(2)
     @completed_achievements = @avatar.user.completed_achievements.map do |ach|
       ach.achievement
-    end
-
-    #giving the avatar a image depending on the avatar xp
-    if @avatar.xp >= 10
-      @avatar.img = './lvl2.jpg'
-    elsif @avatar.xp >= 50
-      @avatar.img = './lvl3.jpg'
-    else
-      @avatar.img = './lvl1.jpg'
     end
       
     render status: 200, json: {
@@ -59,6 +52,15 @@ class Api::AvatarsController < Api::ApiController
     #sum the points for the avatar
     @av_points = @points_array.inject(:+)
     @avatar.xp += @av_points
+
+    #giving the avatar a image depending on the avatar xp
+    if @avatar.xp >= 10
+      @avatar.img = './lvl2.jpg'
+    elsif @avatar.xp >= 50
+      @avatar.img = './lvl3.jpg'
+    else
+      @avatar.img = './lvl1.jpg'
+    end
 
     if @avatar.update(avatar_params)
       render status: 200, json: {
