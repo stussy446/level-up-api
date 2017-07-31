@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     resources :users do
       resources :avatars
+      resources :user_achievements
     end
     
   end
