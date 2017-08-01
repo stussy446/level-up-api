@@ -14,4 +14,9 @@ class Api::UserAchievementsController < Api::ApiController
     }.to_json
   end
 
+  def update
+    @userAchievement = UserAchievement.find(params[:id])
+    @userAchievement.completed = 'true'
+  end
+
 end
