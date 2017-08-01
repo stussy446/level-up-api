@@ -10,14 +10,20 @@ class Api::AvatarsController < Api::ApiController
   def show
     @user = User.find(1)
     @avatar = Avatar.find(1)
+
     @completed_achievements = @avatar.user.completed_achievements.map do |ach|
+      ach.achievement
+    end
+
+    @incomplete_achievements = @avatar.user.incompleted_achievements.map do |ach|
       ach.achievement
     end
       
     render status: 200, json: {
       message: "Successfully got #{@avatar.name}'s' avatar",
       avatar: @avatar,
-      completed_achievements: @completed_achievements
+      completed_achievements: @completed_achievements,
+      incomplete_achievements: @incomplete_achievements
     }.to_json
   end
 
@@ -54,11 +60,15 @@ class Api::AvatarsController < Api::ApiController
 
     #giving the avatar a image depending on the avatar xp
     if @avatar.xp >= 10
-      @avatar.img = '/images/lvl2.jpg'
+      @avatar.img = 'images/Avatars/Worgen/Worgen_1.png'
     elsif @avatar.xp >= 50
-      @avatar.img = '/images/lvl3.jpg'
+      @avatar.img = 'images/Avatars/Worgen/Worgen_2.png'
+    elsifa
+      @avatar.img = 'images/Avatars/Worgen/Worgen_3.png'
+    elsif @avatar.xp >= 90
+      @avatarpngg = 'images/Avatars/Worgen/Worgen_4.png'
     else
-      @avatar.img = '/images/lvl1.jpg'
+      @avatar.img = 'images/Avatars/Worgen/Worgen_5.png'
     end
 
     if @avatar.update(avatar_params)
