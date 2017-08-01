@@ -59,14 +59,14 @@ class Api::AvatarsController < Api::ApiController
     @avatar.xp += @av_points
 
     #giving the avatar a image depending on the avatar xp
-    if @avatar.xp >= 10
+    if @avatar.xp <= 10
       @avatar.img = 'images/Avatars/Worgen/Worgen_1.png'
-    elsif @avatar.xp >= 50
+    elsif @avatar.xp <= 50
       @avatar.img = 'images/Avatars/Worgen/Worgen_2.png'
-    elsifa
+    elsif
       @avatar.img = 'images/Avatars/Worgen/Worgen_3.png'
-    elsif @avatar.xp >= 90
-      @avatarpngg = 'images/Avatars/Worgen/Worgen_4.png'
+    elsif @avatar.xp <= 90
+      @avatar.img = 'images/Avatars/Worgen/Worgen_4.png'
     else
       @avatar.img = 'images/Avatars/Worgen/Worgen_5.png'
     end
