@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    bcrypt (3.1.11)
     builder (3.2.3)
     byebug (9.0.6)
     concurrent-ruby (1.0.5)
@@ -49,6 +50,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
     i18n (0.8.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -64,9 +67,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
+    multi_xml (0.6.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    pg (0.21.0)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -92,6 +97,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.1.2)
       actionpack (= 5.1.2)
       activesupport (= 5.1.2)
@@ -145,12 +155,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
   faker
+  httparty (~> 0.15.6)
   listen (>= 3.0.5, < 3.2)
+  multi_xml (~> 0.6.0)
+  pg
   puma (~> 3.7)
   rails (~> 5.1.2)
   rails-controller-testing
+  rails_12factor
   rspec-rails
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -158,4 +173,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
