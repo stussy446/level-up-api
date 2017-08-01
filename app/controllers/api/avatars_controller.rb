@@ -1,4 +1,5 @@
 class Api::AvatarsController < Api::ApiController
+
   def index
     @avatars = Avatar.all
     render status: 200, json: {
@@ -63,7 +64,7 @@ class Api::AvatarsController < Api::ApiController
       @avatar.img = 'images/Avatars/Worgen/Worgen_1.png'
     elsif @avatar.xp <= 50
       @avatar.img = 'images/Avatars/Worgen/Worgen_2.png'
-    elsif
+    elsif @avatar.xp <= 70
       @avatar.img = 'images/Avatars/Worgen/Worgen_3.png'
     elsif @avatar.xp <= 90
       @avatar.img = 'images/Avatars/Worgen/Worgen_4.png'
