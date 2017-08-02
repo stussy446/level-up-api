@@ -12,9 +12,14 @@ User.destroy_all
 Achievement.destroy_all
 UserAchievement.destroy_all
 Avatar.destroy_all
+Comment.destroy_all
 
 1.times do
   User.create(username: "Username1", password: "password")
+end
+
+1.times do
+  User.create(username: "Username2", password: "password")
 end
 
 30.times do
@@ -22,6 +27,7 @@ end
 end
 
 first_user = User.first
+second_user = User.second
 
 4.times do
   UserAchievement.create(user: first_user, achievement: Achievement.all.sample, completed: true)
@@ -35,6 +41,9 @@ end
   Avatar.create(user: first_user, name: Faker::Name.first_name, img: "PLACEHOLDER FOR IMAGE STRING")
 end
 
+5.times do
+  Comment.create(body: "PLACEHOLDER FOR COMMENT BODY", sender: first_user, receiver: second_user, like_count: rand(1..10))
+end
 
 
 
