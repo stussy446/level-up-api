@@ -5,8 +5,12 @@ class Api::AchievementsController < Api::ApiController
   end
 
   def show 
+    @user = User.find(1)
     @achievement = Achievement.find(params[:id])
-    render json: @achievement
+    render json: {
+      achievement: @achievement,
+      user: @user
+      }.to_json
   end
 
   def update
