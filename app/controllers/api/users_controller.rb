@@ -6,10 +6,14 @@ class Api::UsersController < Api::ApiController
 
   def show
     @user = User.find(params[:id])
+    @comments = @user.received_comments
     @avatar = @user.avatar
+    @sender = User.find(1)
     render json: {
-      user: @user, 
-      avatar: @avatar
+      user: @user,
+      avatar: @avatar,
+      comments: @comments,
+      sender: @sender
     }.as_json
   end
 
