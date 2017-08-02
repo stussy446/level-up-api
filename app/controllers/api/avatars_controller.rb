@@ -61,15 +61,17 @@ class Api::AvatarsController < Api::ApiController
 
     #giving the avatar a image depending on the avatar xp
     if @avatar.xp <= 10
-      @avatar.img = 'images/Avatars/Worgen/Worgen_1.png'
+      @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_1_wave.gif'
     elsif @avatar.xp <= 50
-      @avatar.img = 'images/Avatars/Worgen/Worgen_2.png'
-    elsif @avatar.xp <= 70
-      @avatar.img = 'images/Avatars/Worgen/Worgen_3.png'
-    elsif @avatar.xp <= 90
-      @avatar.img = 'images/Avatars/Worgen/Worgen_4.png'
+      @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_2_clap.gif'
+    elsif @avatar.xp <= 100
+      @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_3_cheer.gif'
+    elsif @avatar.xp <= 500
+      @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_4_dance.gif'
+    elsif @avatar.img <= 700
+      @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_5_flex.gif'
     else
-      @avatar.img = 'images/Avatars/Worgen/Worgen_5.png'
+      @avatar.img = "images/Avatar_Gifs/Gnome_female/Gnome_female_graduated.gif"
     end
 
     if @avatar.update(avatar_params)
