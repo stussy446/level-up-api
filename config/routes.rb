@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :avatars
       resources :user_achievements
+      resources :comments
     end
-    
+
   end
   resources :users
   root "api/avatars#show"
