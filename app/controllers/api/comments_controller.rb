@@ -11,7 +11,7 @@ class Api::CommentsController < Api::ApiController
   def create
     @comment = Comment.new(body: params[:body], sender_id: 1, receiver_id: params[:receiver])
     if @comment.save
-      redirect_to "http://localhost:3000/users/#{params[:receiver]}"
+      redirect_to "https://level-up-rails-front-end.herokuapp.com/users/#{params[:receiver]}"
     else
       "nooooooo"
     end

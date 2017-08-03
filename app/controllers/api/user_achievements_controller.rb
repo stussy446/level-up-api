@@ -19,13 +19,13 @@ class Api::UserAchievementsController < Api::ApiController
     @incomplete_achievements = @user.incompleted_achievements
     @desired_achievement = @incomplete_achievements.find_by(achievement_id: params[:id])
     @desired_achievement.update(completed: true)
-    redirect_to 'http://localhost:3000'
+    redirect_to 'https://level-up-rails-front-end.herokuapp.com/'
   end
 
   def create
     @user_achievement = UserAchievement.new(user_achievement_params)
     if @user_achievement.save
-      redirect_to "http://localhost:3000"
+      redirect_to "https://level-up-rails-front-end.herokuapp.com/"
     else
       render status: 422, json: {
         message: 'fuk that',
