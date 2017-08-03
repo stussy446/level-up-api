@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :avatars
       resources :user_achievements
+      post 'user_achievements/:id', to: 'user_achievements#update' # WTF?
+
+
       resources :comments
     end
 
