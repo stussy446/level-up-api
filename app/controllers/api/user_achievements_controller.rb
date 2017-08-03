@@ -15,17 +15,16 @@ class Api::UserAchievementsController < Api::ApiController
   end
 
   def update
-    @userAchievement = UserAchievement.find(params[:id])
-    @userAchievement.completed = 'true'
+    @user = User.find(1)
+    @incomplete_achievements = @user.incompleted_achievements
+    @desired_achievement = @incomplete_achievements.find_by(achievement_id: params[:id])
+    @desired_achievement.update(completed: true)
+    redirect_to 'http://localhost:3000'
   end
 
   def create
     @user_achievement = UserAchievement.new(user_achievement_params)
     if @user_achievement.save
-      # render status: 200, json: {
-      #   message: "fuk yaa",
-      #   user_achievement: @user_achievement
-      # }.
       redirect_to "http://localhost:3000"
     else
       render status: 422, json: {
