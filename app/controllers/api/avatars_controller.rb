@@ -19,7 +19,7 @@ class Api::AvatarsController < Api::ApiController
     @incomplete_achievements = @avatar.user.incompleted_achievements.map do |ach|
       ach.achievement
     end
-      
+
     render status: 200, json: {
       message: "Successfully got #{@avatar.name}'s' avatar",
       avatar: @avatar,
@@ -49,7 +49,7 @@ class Api::AvatarsController < Api::ApiController
     # reset avatar xp to 0 and add points array container
     @avatar.xp = 0
     @points_array ||= []
-    
+
     #loop through avatars completed achievements and grab the points
     @avatar.user.completed_achievements.map do |ach|
       @points_array << ach.achievement.points
@@ -60,15 +60,15 @@ class Api::AvatarsController < Api::ApiController
     @avatar.xp += @av_points
 
     #giving the avatar a image depending on the avatar xp
-    if @avatar.xp <= 10
+    if @avatar.xp <= 149
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_1_wave.gif'
-    elsif @avatar.xp <= 50
+    elsif @avatar.xp <= 299
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_2_clap.gif'
-    elsif @avatar.xp <= 100
+    elsif @avatar.xp <= 449
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_3_cheer.gif'
-    elsif @avatar.xp <= 500
+    elsif @avatar.xp <= 999
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_4_dance.gif'
-    elsif @avatar.img <= 700
+    elsif @avatar.img <= 9999
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_5_flex.gif'
     else
       @avatar.img = "images/Avatar_Gifs/Gnome_female/Gnome_female_graduated.gif"
