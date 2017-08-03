@@ -87,11 +87,7 @@ UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: 
 
 
 
-#
 
-5.times do
-  Comment.create(body: "PLACEHOLDER FOR COMMENT BODY", sender: first_user, receiver: second_user, like_count: rand(1..10))
-end
 
 
 
