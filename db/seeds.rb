@@ -43,8 +43,8 @@ end
 Achievement.create(name: "The Horse Tamer", description: "To complete this achievement, learn to ride a horse! Not only is this fun, but now you're like three times cooler cause you can ride a horse.", points: 50)
 Achievement.create(name: "The Book Worm", description: "To complete this achievement, you must finish one book!", points: 30)
 Achievement.create(name: "The Worm of all Books", description: "To complete this achievement, you must write a book. This is much harder than just reading a book, so get your creative juices flowing!", points: 100)
-Achievement.create(name: "Rordon Gamsey", description: "To complete this achievement, you must learn a cooking recipe of your choice and prepare the meal yourself.", points: 40)
-Achievement.create(name: "Kitchen Code 420", description: "To complete this achievement, you must learn a baking recipe and bake something of your choice. Disclaimer: you cannot complete this assignment by smoking a joint and baking yourself", points: 40)
+Achievement.create(name: "Rordon Gamsey", description: "To complete this achievement, you must learn a cooking recipe of your choice and prepare the meal yourself.", points: 50)
+Achievement.create(name: "Kitchen Code 420", description: "To complete this achievement, you must learn a baking recipe and bake something of your choice. Disclaimer: you cannot complete this assignment by smoking a joint and baking yourself", points: 50)
 Achievement.create(name: "Piano Man", description: "To complete this achievement, learn to play the piano. You don't have to be as good as Billy Joel.", points: 80)
 Achievement.create(name: "Hackerman", description: "To complete this achievement, you must learn how to build a computer from scratch! Do some research and don't assemble your expensive parts on carpet!", points: 30)
 Achievement.create(name: "Schrute Greenfingers", description: "To complete this achievement, you must grow a garden! You can only grow beets. Bears. Battlestar Galactica.", points: 90)
@@ -52,18 +52,18 @@ Achievement.create(name: "RollerCoaster Rumpus", description: "To complete this 
 Achievement.create(name: "RollerCoaster Rumpus V2", description: "To complete this achievement, you must ride a rollercoaster with vomiting, wow that's a lot of points!", points: 50)
 Achievement.create(name: "Cat-Man and Dog-Woman", description: "To complete this achievement, you must adopt a new dog or a cat! dogs are better by the way", points: 120)
 Achievement.create(name: "Fire Breather", description: "To complete this achievement, you must consume a ghost chili pepper and survive! If you don't survive, the point are not redeemable, yikes! Sorry!", points: 50)
-Achievement.create(name: "The neighborhood's crazy person", description: "To complete this achievement, you must witness a UFO", points: 200)
+Achievement.create(name: "The neighborhood's crazy person", description: "To complete this achievement, you must witness a UFO", points: 250)
 Achievement.create(name: "Mile-High-Club", description: "To complete this achievement, you know what to do.", points: 200)
 Achievement.create(name: "The Scranton Strangler", description: "To complete this achievement, you must make your own DIY Halloween costume!", points: 30)
-Achievement.create(name: "The Pacifist", description: "To complete this achievement, you must get kicked out of a restaurant for disorderly conduct and then proceed to get in a street fight! Get your gloves up and most importantly, have fun!", points: 80)
+Achievement.create(name: "The Pacifist", description: "To complete this achievement, you must get kicked out of a restaurant for disorderly conduct and then proceed to get in a street fight! Get your gloves up and most importantly, have fun!", points: 90)
 Achievement.create(name: "Beauty maker", description: "To complete this achievement, you must graduate DBC", points: 10000)
 Achievement.create(name: "S to the K to the I", description: "To complete this achievement, you must ski a mountain!", points: 25)
 Achievement.create(name: "Snow Crawler", description: "To complete this achievement, you must go snowboarding!", points: 40)
 Achievement.create(name: "Crazy Person", description: "To complete this achievement, you must go bungee-jumping.", points: 50)
 Achievement.create(name: "Insane Being", description: "To complete this achievement, you must go skydiving", points: 80)
-Achievement.create(name: "Taylor Swift", description: "To complete this achievement, you must have had 10 or more relationships!", points: 80)
+Achievement.create(name: "Taylor Swift", description: "To complete this achievement, you must have had 10 or more relationships!", points: 90)
 Achievement.create(name: "Freebie Friday", description: "To complete this achievement, just click complete!", points: 5)
-Achievement.create(name: "Rob the Builder", description: "To complete this achievement, you must create a rails app!", points: 50)
+Achievement.create(name: "Rob the Builder", description: "To complete this achievement, you must create a rails app!", points: 70)
 
 
 
@@ -82,6 +82,8 @@ UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: 
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Taylor Swift"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "RollerCoaster Rumpus"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "RollerCoaster Rumpus V2"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Mile-High-Club"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The neighborhood's crazy person"), completed: false)
 
 
 

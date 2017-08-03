@@ -64,11 +64,11 @@ class Api::AvatarsController < Api::ApiController
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_1_wave.gif'
     elsif @avatar.xp <= 299
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_2_clap.gif'
-    elsif @avatar.xp <= 449
+    elsif @avatar.xp <= 499
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_3_cheer.gif'
     elsif @avatar.xp <= 999
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_4_dance.gif'
-    elsif @avatar.img <= 9999
+    elsif @avatar.xp <= 9999
       @avatar.img = 'images/Avatar_Gifs/Gnome_female/Gnome_female_5_flex.gif'
     else
       @avatar.img = "images/Avatar_Gifs/Gnome_female/Gnome_female_graduated.gif"
