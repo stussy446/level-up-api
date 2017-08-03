@@ -17,11 +17,11 @@ Comment.destroy_all
 
 # user
 1.times do
-  User.create(username: "Username1", password: "password")
+  User.create(username: "hottitotti314", password: "password")
 end
 
 1.times do
-  User.create(username: "Username2", password: "password")
+  User.create(username: "kpuplovesthegiants247", password: "password")
 end
 
 first_user = User.first
@@ -30,11 +30,11 @@ second_user = User.second
 #
 
 1.times do
-  Avatar.create(user: first_user, name: Faker::Name.first_name, img: "PLACEHOLDER FOR IMAGE STRING")
+  Avatar.create(user: first_user, name: "Marissa", img: "PLACEHOLDER FOR IMAGE STRING")
 end
 
 1.times do
-  Avatar.create(user: second_user, name: Faker::Name.first_name, img: "images/Avatars/Male/HumanMale_1.png")
+  Avatar.create(user: second_user, name: "Lou Seal", img: "images/Avatar_gifs/Worgen/Worgen_5_flex.gif")
 end
 
 #
@@ -44,7 +44,7 @@ Achievement.create(name: "The Horse Tamer", description: "To complete this achie
 Achievement.create(name: "The Book Worm", description: "To complete this achievement, you must finish one book!", points: 30)
 Achievement.create(name: "The Worm of all Books", description: "To complete this achievement, you must write a book. This is much harder than just reading a book, so get your creative juices flowing!", points: 100)
 Achievement.create(name: "Rordon Gamsey", description: "To complete this achievement, you must learn a cooking recipe of your choice and prepare the meal yourself.", points: 50)
-Achievement.create(name: "Kitchen Code 420", description: "To complete this achievement, you must learn a baking recipe and bake something of your choice. Disclaimer: you cannot complete this assignment by smoking a joint and baking yourself", points: 50)
+Achievement.create(name: "Kitchen Code 420", description: "To complete this achievement, you must learn a baking recipe and bake something of your choice. Disclaimer: you cannot complete this assignment by getting baked", points: 50)
 Achievement.create(name: "Piano Man", description: "To complete this achievement, learn to play the piano. You don't have to be as good as Billy Joel.", points: 80)
 Achievement.create(name: "Hackerman", description: "To complete this achievement, you must learn how to build a computer from scratch! Do some research and don't assemble your expensive parts on carpet!", points: 30)
 Achievement.create(name: "Schrute Greenfingers", description: "To complete this achievement, you must grow a garden! You can only grow beets. Bears. Battlestar Galactica.", points: 90)
@@ -64,6 +64,11 @@ Achievement.create(name: "Insane Being", description: "To complete this achievem
 Achievement.create(name: "Taylor Swift", description: "To complete this achievement, you must have had 10 or more relationships!", points: 90)
 Achievement.create(name: "Freebie Friday", description: "To complete this achievement, just click complete!", points: 5)
 Achievement.create(name: "Rob the Builder", description: "To complete this achievement, you must create a rails app!", points: 70)
+Achievement.create(name: "Hmmmm..........", description: "To complete this achievement, you must have Mark explain something to you without making him say 'um' a SINGLE time!", points: 100)
+Achievement.create(name: "American fish", description: "To complete this achievement, you must have James offer you his bag of Swedish Fish", points: 100)
+Achievement.create(name: "Worse than Detention", description: "To complete this achievement, you must get chewed out by Hunter and NOT cry!", points: 100)
+Achievement.create(name: "Once in a Blue Moon", description: "To complete this achievement, you must make Max raise his voice at you, yikes!", points: 100)
+
 
 
 
@@ -72,18 +77,30 @@ Achievement.create(name: "Rob the Builder", description: "To complete this achie
 
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The Book Worm"), completed: true)
 
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Rob the Builder"), completed: false)
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The Book Worm"), completed: false)
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The Worm of all Books"), completed: false)
+
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Rordon Gamsey"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Kitchen Code 420"), completed: false)
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Schrute Greenfingers"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The Pacifist"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Schrute Greenfingers"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Taylor Swift"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "RollerCoaster Rumpus"), completed: false)
 UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "RollerCoaster Rumpus V2"), completed: false)
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Mile-High-Club"), completed: false)
-UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "The neighborhood's crazy person"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Hmmmm.........."), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "American fish"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Worse than Detention"), completed: false)
+UserAchievement.create(user: first_user, achievement: Achievement.find_by(name: "Once in a Blue Moon"), completed: false)
+
+
+
+
+Comment.create(body: "Hey cool avatar, name?", sender: first_user, receiver: second_user, like_count: rand(1..10))
+
+Comment.create(body: "Heyy, really diggin the trousers, do you have an instagram?", sender: first_user, receiver: second_user, like_count: rand(1..10))
+
+Comment.create(body: "Hey I don't think the first two comments posted, just checkin in... Meet up later for the bookworm achievement?", sender: first_user, receiver: second_user, like_count: rand(1..10))
+
+Comment.create(body: "Look out the window I brought flowers!", sender: first_user, receiver: second_user, like_count: rand(1..10))
+
 
 
 
